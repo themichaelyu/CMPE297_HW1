@@ -532,4 +532,6 @@ MULTI_stack_switch(struct multicall_entry *mcl,
 	mcl->args[1] = esp;
 }
 
+long goodbyeworld(void);
+
 #endif /* _ASM_X86_XEN_HYPERCALL_H */

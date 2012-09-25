@@ -3467,5 +3467,15 @@ int module_get_iter_tracepoints(struct tracepoint_iter *iter)
 	mutex_unlock(&module_mutex);
 	return found;
 }
+
+asmlinkage long sys_modcount(void)
+{
+    int count = 0;
+    struct module *mod;
+
+    list_for_each_entry(mod, &modules, list) {
+        count++;
+    }
+    return count;
 }
 #endif
